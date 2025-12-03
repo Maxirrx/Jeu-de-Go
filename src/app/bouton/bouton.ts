@@ -9,4 +9,8 @@ import {Component, input} from '@angular/core';
 export class Bouton {
 
     name = input<string>();
+
+    getname(){
+      return  this.name
+    }
 }

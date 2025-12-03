@@ -1,6 +1,17 @@
-.bouton {
+.stylebtn {
   display: flex;
   justify-content: center;
   align-items: center;
   background: #f87576;
+  color: white;
+  border: none;
+  height: 100%;
+  width: 100%;
+  font-weight: bold;
+  font-size: 1.5vw;
+  border-radius: 1vw;
+}
+.stylebtn:hover {
+  background: #fc6263;
+  color: #eeeeee;
 }
