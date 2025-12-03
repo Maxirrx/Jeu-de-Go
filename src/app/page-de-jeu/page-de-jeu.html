@@ -3,25 +3,18 @@
     <app-plateau></app-plateau>
   </div>
   <div class="right">
+    <div class="absolute">
     <div class="button">
       <app-bouton name="Historique"></app-bouton>
     </div>
+    </div>
     <div class="flex">
-    <div class="case">
-      <h1>Nombre de tour</h1>
-      <p>0</p>
-    </div>
-    <div class="case">
-      <h1>Joueur 1</h1>
-      <p>0</p>
-    </div>
-    <div class="case">
-      <h1>Joueur2</h1>
-      <p>0</p>
-    </div>
+      <app-case-stat name="Nombre de coup" numero="0"></app-case-stat>
+      <app-case-stat name="Joueur 1" numero="0"></app-case-stat>
+      <app-case-stat name="Joueur2" numero="0"></app-case-stat>
     </div>
     <div class="button">
-      <app-bouton name="Passer"></app-bouton>
+      <app-bouton [callback]=Plateau.passerSonTour name="Passer"></app-bouton>
     </div>
     <div class="button">
       <app-bouton name="Déclarer forfait"></app-bouton>

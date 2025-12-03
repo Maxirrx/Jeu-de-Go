@@ -16,21 +16,10 @@
   height: 4vw;
 }
 
-
-h1{
-  font-size: 1.2vw;
-  font-family: 'Roboto Light', sans-serif;
-  color: #fff;
-  text-align: center;
-}
-
-p{
-  font-size: 4vw;
-  font-family: 'Roboto Light', sans-serif;
-  color: #fff;
-  text-align: center;
-  font-weight: bold;
-  margin-top: -1vw;
+.absolute{
+  right: 1vw;
+  top: 1vw;
+  position: absolute;
 }
 
 .case{

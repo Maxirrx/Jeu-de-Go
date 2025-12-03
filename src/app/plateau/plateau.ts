@@ -73,10 +73,28 @@ export class Plateau {
     }
   }
 
-  savehistory() {
+  saveHistory() {
     this.historique.push(this.historiquegame)
     localStorage.setItem('historique', JSON.stringify(this.historique));
   }
+
+  passerSonTour(){
+    console.log('passerSonTour')
+    if (this.player == 1) {
+      this.player = 2;
+      const coup: Coup = {
+        position: 1000,
+        action: 1
+      }
+      this.historiquegame.push(coup)
+    } else {
+      this.player = 1;
+      const coup: Coup = {
+        position: 1000,
+        action: 2
+      }
+      this.historiquegame.push(coup)
+    }}
 
 
 }
