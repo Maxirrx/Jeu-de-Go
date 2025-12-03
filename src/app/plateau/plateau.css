@@ -1,0 +1,31 @@
+.grille-vue{
+  position: absolute;
+  display:grid;
+  grid-template-columns: repeat(8, 10vh);
+  grid-template-rows: repeat(8, 10vh);
+}
+
+.grid-jeu{
+  position: relative;
+  display:grid;
+  grid-template-columns: repeat(9, 10vh);
+  grid-template-rows: repeat(9, 10vh);
+}
+
+.case{
+  border: 0px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bordure-de-secour{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:95vh;
+  width:95vh;
+  background: #f87576;
+  border-radius: 5vh;
+}
+

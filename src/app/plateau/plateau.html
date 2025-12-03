@@ -1,0 +1,21 @@
+<div class="bordure-de-secour">
+  <div class="grille-vue">
+    @for (case of plateau_affichage; track $index) {
+      <div class="surcase">
+          <app-case [colorback]=plateau_affichage[$index]> </app-case>
+      </div>
+    }
+  </div>
+  <div class="grid-jeu">
+    @for (case of plateau_jeu; track $index) {
+      <div class="case" (click)="leftclick($index)" (contextmenu)="rightclick($index , $event)">
+        @if(plateau_jeu[$index] == 1){
+          <app-pion [color]=1></app-pion>
+        } @else if (plateau_jeu[$index] == 2) {
+          <app-pion [color]=2></app-pion>
+        }
+
+      </div>
+    }
+  </div>
+</div>
