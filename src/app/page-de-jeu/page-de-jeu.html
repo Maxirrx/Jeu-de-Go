@@ -4,20 +4,17 @@
   </div>
   <div class="right">
     <div class="absolute">
-    <div class="button">
-      <app-bouton name="Historique"></app-bouton>
-    </div>
     </div>
     <div class="flex">
-      <app-case-stat name="Nombre de coup" numero="0"></app-case-stat>
-      <app-case-stat name="Joueur 1" numero="0"></app-case-stat>
-      <app-case-stat name="Joueur2" numero="0"></app-case-stat>
+      <app-case-stat name="Nombre de coup" [numero]="getNbCoup()"></app-case-stat>
+      <app-case-stat name="Joueur Noir" [numero]="getNbCoupNoir()"></app-case-stat>
+      <app-case-stat name="Joueur Blanc" [numero]="getNbCoupBlanc()"></app-case-stat>
     </div>
     <div class="button">
-      <app-bouton [callback]=Plateau.passerSonTour name="Passer"></app-bouton>
+      <app-bouton [callback]="passer" name="Passer"></app-bouton>
     </div>
     <div class="button">
-      <app-bouton name="Déclarer forfait"></app-bouton>
+      <app-bouton [callback]="reset" name="Reset"></app-bouton>
     </div>
   </div>
 </div>

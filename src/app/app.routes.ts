@@ -5,5 +5,5 @@ import {PageDeJeu} from './page-de-jeu/page-de-jeu';
 import {Bouton} from './bouton/bouton';
 
 export const routes: Routes = [
-  {  path: 'max',  component: PageDeJeu},
+  {  path: '',  component: PageDeJeu},
 ];

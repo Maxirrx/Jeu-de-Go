@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {Plateau} from '../plateau/plateau';
 import {Bouton} from '../bouton/bouton';
 import {CaseStat} from '../case-stat/case-stat';
@@ -15,7 +15,32 @@ import {CaseStat} from '../case-stat/case-stat';
 })
 export class PageDeJeu {
 
-  Plateau: Plateau = new Plateau();
+  @ViewChild(Plateau)
+  plateau!: Plateau;
+
+
+  passer = () => {
+    this.plateau.passerSonTour();
+  };
+
+  reset = () => {
+    window.location.reload();
+
+  };
+  
+
+
+  getNbCoup(): string {
+    return this.plateau?.nbcouptotal().toString() ?? '0';
+  }
+
+  getNbCoupNoir(): string {
+    return this.plateau?.nbcoupnoir().toString() ?? '0';
+  }
+
+  getNbCoupBlanc(): string {
+    return this.plateau?.nbcoupblanc().toString() ?? '0';
+  }
 
 
 }

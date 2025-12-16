@@ -9,17 +9,16 @@ import {callbackify} from 'node:util';
 })
 export class Bouton {
 
-    name = input<string>();
-    callback = input< ((arg?: any) => void) | undefined >(undefined)
+  name = input<string>();
+  callback = input<((arg?: any) => void) | undefined>(undefined)
 
-    getname(){
-      return this.name()
-    }
+  getname() {
+    return this.name()
+  }
 
-    getCallBack(){
-      if (this.callback) {
-        console.log(this.callback);
-        this.callback();
-      }
-    }
+
+  onClick() {
+    this.callback()?.();
+  }
+
 }

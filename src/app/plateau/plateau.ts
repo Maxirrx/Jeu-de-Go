@@ -1,4 +1,4 @@
-import {Component, inject} from '@angular/core';
+import {Component, inject, signal} from '@angular/core';
 import {Case} from '../case/case';
 import {Pion} from '../pion/pion';
 import {Coup} from '../coup';
@@ -18,6 +18,10 @@ export class Plateau {
   player = 1
   historique: Coup[][] = []
   toto = inject(LocalstorageService)
+
+  nbcoupblanc = signal(0);
+  nbcoupnoir = signal(0);
+  nbcouptotal = signal(0);
 
 
   constructor() {
@@ -48,6 +52,7 @@ export class Plateau {
           position: idcase,
           action: 1
         }
+        this.nbcoupnoir.update(v => v + 1);
         this.historiquegame.push(coup)
       } else {
         this.player = 1;
@@ -56,7 +61,11 @@ export class Plateau {
           action: 2
         }
         this.historiquegame.push(coup)
+        this.nbcoupblanc.update(v => v + 1);
+
       }
+      this.nbcouptotal.update(v => v + 1);
+
     }
 
   }
@@ -79,7 +88,6 @@ export class Plateau {
   }
 
   passerSonTour(){
-    console.log('passerSonTour')
     if (this.player == 1) {
       this.player = 2;
       const coup: Coup = {
@@ -94,7 +102,11 @@ export class Plateau {
         action: 2
       }
       this.historiquegame.push(coup)
+
     }}
+
+
+
 
 
 }
